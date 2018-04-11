@@ -18,8 +18,12 @@ let
   # https://github.com/NixOS/nixpkgs/issues/26392
   # https://github.com/pypa/setuptools/issues/885
   pkg_resources = fetchurl {
-    url = "https://raw.githubusercontent.com/pypa/setuptools/v36.0.1/pkg_resources/__init__.py";
-    sha256 = "1wdnq3mammk75mifkdmmjx7yhnpydvnvi804na8ym4mj934l2jkv";
+    url = "https://raw.githubusercontent.com/pypa/setuptools/v36.2.5/pkg_resources/__init__.py";
+    sha256 = "e8ebce4e2dd37bcdaadc35ad5248a5007ad01abbbd5b7f49c6a5564ae5b3ee72";
+  };
+  py31compat = fetchurl {
+    url = "https://raw.githubusercontent.com/pypa/setuptools/v36.2.5/pkg_resources/py31compat.py";
+    sha256 = "fb2b15aa8c4b7ad0272fde2e33490792898a4130b52592cdd99523a9484c78a1";
   };
 
 in stdenv.mkDerivation rec {
@@ -40,6 +44,7 @@ in stdenv.mkDerivation rec {
     unzip -d $out/${python.sitePackages} ${wheel_source}
     # TODO: Shouldn't be necessary anymore for pip > 9.0.1!
     cp ${pkg_resources} $out/${python.sitePackages}/pip/_vendor/pkg_resources/__init__.py
+    cp ${py31compat} $out/${python.sitePackages}/pip/_vendor/pkg_resources/py31compat.py
   '';
 
   patchPhase = ''
