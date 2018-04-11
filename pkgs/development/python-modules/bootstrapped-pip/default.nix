@@ -24,13 +24,13 @@ let
 
 in stdenv.mkDerivation rec {
   pname = "pip";
-  version = "9.0.1";
+  version = "9.0.3";
   name = "${python.libPrefix}-bootstrapped-${pname}-${version}";
 
   src = fetchPypi {
     inherit pname version;
     format = "wheel";
-    sha256 = "690b762c0a8460c303c089d5d0be034fb15a5ea2b75bdf565f40421f542fefb0";
+    sha256 = "c3ede34530e0e0b2381e7363aded78e0c33291654937e7373032fda04e8803e5";
   };
 
   unpackPhase = ''
