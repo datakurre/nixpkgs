@@ -18,11 +18,11 @@ let
   # https://github.com/NixOS/nixpkgs/issues/26392
   # https://github.com/pypa/setuptools/issues/885
   pkg_resources = fetchurl {
-    url = "https://raw.githubusercontent.com/pypa/setuptools/v36.2.5/pkg_resources/__init__.py";
-    sha256 = "e8ebce4e2dd37bcdaadc35ad5248a5007ad01abbbd5b7f49c6a5564ae5b3ee72";
+    url = "https://raw.githubusercontent.com/pypa/setuptools/v36.2.6/pkg_resources/__init__.py";
+    sha256 = "15ff4600s0g3d6x33z7ndpqx3yp480yv7xasn8plppkw98ssm8q3";
   };
   py31compat = fetchurl {
-    url = "https://raw.githubusercontent.com/pypa/setuptools/v36.2.5/pkg_resources/py31compat.py";
+    url = "https://raw.githubusercontent.com/pypa/setuptools/v36.2.6/pkg_resources/py31compat.py";
     sha256 = "fb2b15aa8c4b7ad0272fde2e33490792898a4130b52592cdd99523a9484c78a1";
   };
 
