@@ -9,9 +9,9 @@ let
   };
   setuptools_source = fetchPypi {
     pname = "setuptools";
-    version = "38.4.0";
+    version = "39.0.1";
     format = "wheel";
-    sha256 = "155c2ec9fdcc00c3973d966b416e1cf3a1e7ce75f4c09fb760b23f94b935926e";
+    sha256 = "8010754433e3211b9cdbbf784b50f30e80bf40fc6b05eb5f865fab83300599b8";
   };
 
   # TODO: Shouldn't be necessary anymore for pip > 9.0.1!
@@ -24,13 +24,13 @@ let
 
 in stdenv.mkDerivation rec {
   pname = "pip";
-  version = "9.0.3";
+  version = "10.0.0b2";
   name = "${python.libPrefix}-bootstrapped-${pname}-${version}";
 
   src = fetchPypi {
     inherit pname version;
     format = "wheel";
-    sha256 = "c3ede34530e0e0b2381e7363aded78e0c33291654937e7373032fda04e8803e5";
+    sha256 = "79f55588912f1b2b4f86f96f11e329bb01b25a484e2204f245128b927b1038a7";
   };
 
   unpackPhase = ''
